@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tejashah.neuralart.gui.ViewResultActivity">
+    tools:context="com.tejashah.neuralart.gui.ViewResultActivity"
+    android:padding="2dp">
 
     <ImageView
         android:id="@+id/imgResult"
@@ -23,10 +25,19 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:weightSum="1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnRotateRight"
+            app:srcCompat="@drawable/ic_rotate_right_black_24dp"
+            android:onClick="rotateImageRight"
+            android:visibility="gone"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -36,7 +47,8 @@
             android:onClick="saveImage"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:nestedScrollingEnabled="false"/>
+            android:nestedScrollingEnabled="false"
+            android:layout_weight=".5"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +57,17 @@
             android:id="@+id/btnGotoMainMenu"
             android:layout_alignTop="@+id/btnSave"
             android:layout_toEndOf="@+id/btnSave"
-            android:onClick="gotoMainMenu"/>
+            android:onClick="gotoMainMenu"
+            android:layout_weight=".5"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnRotateLeft"
+            app:srcCompat="@drawable/ic_rotate_left_black_24dp"
+            android:onClick="rotateImageLeft"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
 </RelativeLayout>

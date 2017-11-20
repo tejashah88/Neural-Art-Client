@@ -1,6 +1,5 @@
 package com.tejashah.neuralart.gui;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -19,7 +18,6 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.canelmas.let.AskPermission;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -181,7 +179,6 @@ public class MakeArtActivity extends BaseActivity {
 				.show();
 	}
 
-	@AskPermission(Manifest.permission.CAMERA)
 	public void launchCamera() {
 		EasyImage.openCamera(MakeArtActivity.this, 88);
 	}

@@ -1,11 +1,13 @@
 package com.tejashah.neuralart.gui;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.canelmas.let.AskPermission;
 import com.tejashah.neuralart.R;
 
 public class MainMenuActivity extends BaseActivity {
@@ -15,6 +17,7 @@ public class MainMenuActivity extends BaseActivity {
 		setContentView(R.layout.activity_main_menu);
 	}
 
+	@AskPermission({Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE})
 	public void gotoMakeArtActivity(View v) {
 		gotoActivity(MakeArtActivity.class);
 	}
@@ -32,6 +35,4 @@ public class MainMenuActivity extends BaseActivity {
 				})
 				.show();
 	}
-
-
 }
